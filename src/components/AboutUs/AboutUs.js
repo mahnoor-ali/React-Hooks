@@ -1,11 +1,14 @@
 import React from 'react';
 import './AboutUs.module.css';
 import { Link } from 'react-router-dom';
-
+import useDarkMode from '../../hooks/useDarkMode.js';
 
 function AboutUs() {
+  const [isDarkMode, setDarkMode]  = useDarkMode();
   return (
     <div className="about-us">
+      <button onClick={() => setDarkMode(!isDarkMode)}> {isDarkMode? 'DarkMode': 'Light Mode'}  </button>
+
       <h1>About Us</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis sapien id elit faucibus, at tristique nunc mollis. Vivamus eget congue lacus, ut pellentesque ipsum. Sed non metus quis mi placerat bibendum. Integer condimentum suscipit quam, nec malesuada risus mattis sed.
